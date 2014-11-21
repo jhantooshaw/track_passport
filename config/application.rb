@@ -27,8 +27,8 @@ module TrackPassport
       address:              'smtp.gmail.com',
       port:                 587,
       domain:               'trackpassport.com',
-      user_name:            'jhantoo.shaw@stellingtech.com',
-      password:             'mantoo25',
+      user_name:            '',
+      password:             '',
       authentication:       'plain',
       enable_starttls_auto: true  }
     
