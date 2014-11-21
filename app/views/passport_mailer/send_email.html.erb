@@ -1,0 +1,6 @@
+<p>Welcome <%= "#{@passport.first_name} #{@passport.last_name}" %>!</p>
+
+<p>Your passport is ready to delivered. Please track the status of your passport using below unique number:</p>
+<p><%= @passport.unique_number %></p>
+
+<p><%= link_to 'Track Passport', root_url%></p>

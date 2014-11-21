@@ -1,0 +1,8 @@
+<div class="navbar-collapse collapse">
+  <%= form_tag search_passports_path,  {class: "navbar-form navbar-right", method: "GET", remote: true} do %>
+      <input type="text" name="term" placeholder="Search..." class="form-control">
+    <%end%>
+  </div>
+  <div id="passport">
+    <%= render partial: 'passport' %>
+  </div> 

@@ -1,0 +1,49 @@
+<%unless @passports.blank?%>
+  <div class="table-responsive" data-pattern="priority-columns">
+    <table cellspacing="0" id="tech-companies-1" class="table table-small-font table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>DOB</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Passport</th>
+          <th>Expiry Date</th>
+          <th>Unique No</th>
+          <th>Status</th>
+          <th style="text-align:center;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>  
+        <% @passports.each do |passport|%>
+          <tr>
+            <td><%= "#{passport.first_name} #{passport.last_name}" %></td>
+            <td><%= change_date_format passport.dob %></td>
+            <td><%= passport.email %></td>
+            <td><%= passport.mobile %></td>
+            <td><%= passport.number %></td>
+            <td><%= change_date_format passport.expiry_date%></td>
+            <td><%= passport.unique_number %></td>
+            <td><%=  passport.status.humanize%></td>
+            <td style="text-align:center;">
+              <%= link_to change_html("<span class='glyphicon glyphicon-edit'></span>"), edit_passport_path(passport), title: "Edit Passport"%> &nbsp;|&nbsp;
+              <%= link_to change_html("<span class='glyphicon glyphicon-trash'></span>"), passport, data: {confirm: "Are you sure", method: :delete}, title: "Delete Passport" %>
+            </td>
+
+          </tr>
+        <%end%>
+
+      </tbody>
+    </table>
+  </div>
+<%else%>
+  No Passport Have Been Made!!! <%= link_to "Click here to create one", new_passport_path %>
+<%end%>
+<div class="" style="text-align:center;">
+<%#= will_paginate @passports, params: {location_id: params[:location_id], outlet_id: params[:outlet_id], start_date: params[:start_date], end_date: params[:end_date]}, class: 'pagination-sm', renderer: BootstrapPagination::Rails %>
+  <%= will_paginate @passports, class: 'pagination-sm', renderer: BootstrapPagination::Rails %>
+  </div>
+
+  <script type="text/javascript">
+    responsive_table(true);
+  </script>

@@ -1,0 +1,12 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {role: "form", class: "form-signin", id: "formID", method: :post}) do |f| %>
+    <h3 class="form-signin-heading">Forgot your password?</h3>  
+    <%= devise_error_messages! %>
+
+    <%= f.text_field :email, class: "form-control validate[required, custom[email],ajax[ClientEmail]]", placeholder: "Email address"%>
+      <label></label>
+      <%= f.submit "Send me", class: "btn btn-lg btn-primary btn-block" %>
+      <% end %>
+
+      <div class="form-signin">
+        <%= render "devise/shared/links" %>
+      </div>
