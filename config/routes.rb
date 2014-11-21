@@ -9,6 +9,11 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'visas'
+      post 'change-status/:visa_id' => 'passports#visa_status', as: :change_status
+      delete 'destroy_visa/:visa_id' => 'passports#destroy_visa', as: :delete_visa
+    end
   end
   #end
   

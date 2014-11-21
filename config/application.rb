@@ -20,7 +20,7 @@ module TrackPassport
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     
-    WillPaginate.per_page = 10
+    WillPaginate.per_page = 5
      
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {

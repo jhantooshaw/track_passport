@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118181640) do
+ActiveRecord::Schema.define(version: 20141121142103) do
 
   create_table "passports", force: true do |t|
     t.string   "first_name"
@@ -60,5 +60,15 @@ ActiveRecord::Schema.define(version: 20141118181640) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "visas", force: true do |t|
+    t.string   "status",        default: "under_process"
+    t.string   "unique_number"
+    t.string   "visa_type"
+    t.boolean  "is_deleted",    default: false
+    t.integer  "passport_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -8,8 +8,7 @@ class CreatePassports < ActiveRecord::Migration
       t.string      :mobile
       t.string      :number
       t.date        :expiry_date
-      t.string      :status,              default: 'ready_to_start'
-      t.string      :unique_number
+      
       t.timestamps
     end
     
