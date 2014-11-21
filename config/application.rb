@@ -27,8 +27,8 @@ module TrackPassport
       address:              'smtp.gmail.com',
       port:                 587,
       domain:               'trackpassport.com',
-      user_name:            '',
-      password:             '',
+      user_name:            ENV['GMAILUSER'],
+      password:             ENV['GMAILPASSWORD'],
       authentication:       'plain',
       enable_starttls_auto: true  }
     
