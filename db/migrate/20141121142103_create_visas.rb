@@ -8,5 +8,9 @@ class CreateVisas < ActiveRecord::Migration
       t.references  :passport
       t.timestamps
     end
+      
+    add_index :passports, :unique_number,     unique: true
+    add_index :passports, :status    
+    add_index :passports, :visa_type    
   end
 end

@@ -14,6 +14,6 @@ class CreatePassports < ActiveRecord::Migration
     add_index :passports, :dob
     add_index :passports, :email
     add_index :passports, :mobile
-    add_index :passports, :number,            unique: true 
+    add_index :passports, :number,            unique: true  
   end
 end
