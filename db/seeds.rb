@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first), 
 
 User.create(email: 'jhantoo.shaw@gmail.com', password: 'abcd1234', password_confirmation: 'abcd1234')
+User.create(email: 'admin@trackpassport', password: 'abcd1234', password_confirmation: 'abcd1234')
+User.create(email: 'manmeet_kohli@yahoo.com', password: 'abcd1234', password_confirmation: 'abcd1234')

@@ -7,17 +7,13 @@ class CreatePassports < ActiveRecord::Migration
       t.string      :email
       t.string      :mobile
       t.string      :number
-      t.date        :expiry_date
-      
+      t.date        :expiry_date      
       t.timestamps
     end
     
     add_index :passports, :dob
     add_index :passports, :email
     add_index :passports, :mobile
-    add_index :passports, :number,            unique: true    
-    add_index :passports, :unique_number,     unique: true
-    add_index :passports, :status
-    
+    add_index :passports, :number,            unique: true 
   end
 end
