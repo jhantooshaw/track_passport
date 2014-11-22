@@ -1,6 +1,6 @@
 class PassportsController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_passport, only: [:edit, :show, :update, :destroy, :visa_status, :visas, :add_visa] 
+  before_action :get_passport, only: [:edit, :show, :update, :destroy, :visa_status, :visas, :add_visa, :destroy_visa] 
   before_action :get_all_passports, only: [:index, :visa_status] 
   layout "admin"
   
@@ -89,9 +89,21 @@ class PassportsController < ApplicationController
     end
   end
   
+  def destroy_visa
+    begin
+      @visa = @passport.visas.find(params[:visa_id])
+      @visa.destroy!
+      flash[:info] = "Visa is deleted successfully."
+      redirect_to passports_path
+    rescue Exception => e
+      puts "Exception: #{e.message}"
+      flash.now[:warning] = e.message
+      @error = e.message
+    end
+  end
+  
   
   private
-  
   def passport_params
     params.require(:passport).permit(:first_name, :last_name, :dob, :email, :mobile, :number, :expiry_date)
   end
