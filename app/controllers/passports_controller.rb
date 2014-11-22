@@ -16,7 +16,7 @@ class PassportsController < ApplicationController
     begin
       @passport.visas.build(visa_params)
       @passport.save!     
-      #PassportMailer.send_email(@passport).deliver
+      PassportMailer.send_email(@passport).deliver
       flash[:notice] = "Passport is created successfully. An email and text message is sent to respective email and mobile number."
       redirect_to passports_path
     rescue Exception => e
@@ -27,7 +27,7 @@ class PassportsController < ApplicationController
  
   def update    
     begin 
-      @passport.update_attributes!(update_passport_params)
+      @passport.update_attributes!(passport_params)
       flash[:notice] = "Passport is updated successfully."
       redirect_to passports_path
     rescue Exception => e
@@ -94,10 +94,6 @@ class PassportsController < ApplicationController
   
   def passport_params
     params.require(:passport).permit(:first_name, :last_name, :dob, :email, :mobile, :number, :expiry_date)
-  end
-  
-  def update_passport_params
-    params.require(:passport).permit(:first_name, :last_name, :dob, :email, :mobile, :number, :expiry_date, :status)
   end
   
   def visa_params
