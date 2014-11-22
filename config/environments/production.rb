@@ -82,5 +82,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   config.assets.paths += %W("#{Rails.root}/vendor/assets/fonts")
+  
+  config.action_mailer.default_url_options = { host: 'visa.neovisioninfo.com' }
 
 end
