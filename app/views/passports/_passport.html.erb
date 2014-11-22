@@ -2,7 +2,7 @@
 
 
   <div class="table-responsive" data-pattern="priority-columns">
-    <table cellspacing="0" id="tech-companies-1" class="table table-small-font table-bordered table-striped focus-on">
+    <table cellspacing="0" id="tech-companies-1" class="table table-small-font table-bordered table-striped">
       <thead>
         <tr>
           <th>Name</th>
@@ -25,9 +25,9 @@
             <td><%= change_date_format passport.expiry_date%></td>
 
             <td style="text-align:center;">
-              <%= link_to change_html("<span class='glyphicon glyphicon-plus'></span>"), add_visa_passport_path(passport), title: "Add New Visa", remote: true%> &nbsp;|&nbsp;
-              <%= link_to change_html("<span class='glyphicon glyphicon-list'></span>"), visas_passport_path(passport), title: "List Visa", remote: true%> &nbsp;|&nbsp;
-              <%= link_to change_html("<span class='glyphicon glyphicon-edit'></span>"), edit_passport_path(passport), title: "Edit Passport"%> &nbsp;|&nbsp;
+              <%= link_to change_html("<span class='glyphicon glyphicon-list'></span>"), visas_passport_path(passport), title: "List Visa", remote: true%> &nbsp;
+              <%= link_to change_html("<span class='glyphicon glyphicon-plus'></span>"), add_visa_passport_path(passport), title: "Add New Visa", remote: true%> &nbsp;
+              <%= link_to change_html("<span class='glyphicon glyphicon-edit'></span>"), edit_passport_path(passport), title: "Edit Passport"%> &nbsp;
               <%= link_to change_html("<span class='glyphicon glyphicon-trash'></span>"), passport, data: {confirm: "Are you sure", method: :delete}, title: "Delete Passport" %>
             </td>
 
@@ -57,6 +57,6 @@
     responsive_table(true);
 
     //$('#tech-companies-1').find('tr').click(function() {
-    //  $(this).css('background-color', 'red');
-   // });
+    //  return false;
+    //});
   </script>
