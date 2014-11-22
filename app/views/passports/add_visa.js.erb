@@ -1,0 +1,10 @@
+<% if request.get? %>
+  $('#add_visa').html('<%= escape_javascript(render partial: 'shared/add_visa') %>');
+  $.unblockUI();
+<%else%>
+  <% if !@error.present? %>
+    $('#add_visa').html('');
+    $('#list_visa').html('<%= escape_javascript(render partial: 'shared/visas') %>');
+  <%end%>
+  $('#message_id').html('<%= escape_javascript(render partial: 'layouts/messages') %>');
+<%end%>

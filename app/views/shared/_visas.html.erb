@@ -2,7 +2,7 @@
   <table cellspacing="0" id="tech-companies-2" class="table table-small-font table-bordered table-striped">
     <thead>
       <tr>
-        <th>Passport</th>
+       <!-- <th>Passport</th>-->
         <th>Visa Type</th>          
         <th>Unique No</th>
         <th>Status</th>
@@ -12,18 +12,20 @@
     <tbody>  
       <% @visas.each do |visa|%>
         <tr>
-          <td><%= visa.passport.number %></td>
+         <!-- <td><%#= visa.passport.number %></td>-->
           <td><%= visa.visa_type.capitalize %></td>
           <td><%= visa.unique_number %></td>              
           <td> 
-            <%= form_tag change_status_passport_path(visa.passport, visa) do %>
+            <%= form_tag change_status_passport_path(visa.passport, visa), remote: true do %>
               <%= select_tag :status, options_for_select(Visa::STATUS, visa.status) %>
-            </td>
-            <td style="text-align:center;">               
-              <%= link_to change_html("<span class='glyphicon glyphicon-save'></span>"), "javascrip:void(0)", title: "Change Status Of Visa & Click To Save"%> &nbsp;|&nbsp;
-              <%= link_to change_html("<span class='glyphicon glyphicon-trash'></span>"), delete_visa_passport_path(visa.passport, visa), data: {confirm: "Are you sure", method: :delete}, title: "Delete Visa" %>
-            </td>
-          <%end%>
+            <%= submit_tag 'Change' %>
+            <%end%>
+          </td>
+          <td style="text-align:center;">               
+            <%= link_to change_html("<span class='glyphicon glyphicon-save'></span>"), "javascrip:void(0)", title: "Change Status Of Visa & Click To Save"%> &nbsp;|&nbsp;
+            <%= link_to change_html("<span class='glyphicon glyphicon-trash'></span>"), delete_visa_passport_path(visa.passport, visa), data: {confirm: "Are you sure", method: :delete}, title: "Delete Visa" %>
+          </td>
+
 
         </tr>
       <%end%>

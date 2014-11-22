@@ -1,5 +1,5 @@
 class Passport < ActiveRecord::Base
-  has_many    :visas
+  has_many    :visas,     dependent: :destroy
   
   default_scope {order("created_at desc")}
  
