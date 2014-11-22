@@ -14,9 +14,9 @@ class PassportsController < ApplicationController
   def create
     @passport = Passport.new(passport_params)    
     begin
-      @passport.visas.build(visa_params)
-      @passport.save!     
-      PassportMailer.send_email(@passport).deliver
+      @visa = @passport.visas.build(visa_params)
+      @passport.save! 
+      PassportMailer.send_email(@passport, @visa).deliver
       flash[:notice] = "Passport is created successfully. An email and text message is sent to respective email and mobile number."
       redirect_to passports_path
     rescue Exception => e
@@ -78,7 +78,8 @@ class PassportsController < ApplicationController
   def add_visa
     if request.post?
       begin
-        @passport.visas.create!(visa_type: params[:visa_type])
+        @visa = @passport.visas.create!(visa_type: params[:visa_type])
+        PassportMailer.send_email(@passport, @visa).deliver
         @visas = @passport.visas
         flash[:info] = "Visa is added successfully."  
       rescue Exception => e
