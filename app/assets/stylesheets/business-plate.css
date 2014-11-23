@@ -10,16 +10,16 @@ img{max-width:100%}
 .title{ border-bottom:1px solid #eee; padding-bottom:4px; margin-bottom:20px;}
 .topHeaderSection{background:#fff; padding:0}
 
-  .header {
-z-index: 999;
-position: relative;
-padding: 0;
-box-shadow:4px 4px 2px #DADADA;
+.header {
+    z-index: 999;
+    position: relative;
+    padding: 0;
+    box-shadow:4px 4px 2px #DADADA;
 }
 .is-sticky {
-width: 100%;
-background-color: #ffffff;
-background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 
@@ -32,15 +32,15 @@ background-color: rgba(255, 255, 255, 0.95);
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #E9E9E9;
-	z-index:9999;
+    z-index:9999;
 }
 .top .container {
     padding:0 15px;
 }
 
 .phone-mail {
-    margin:10px 20px 0 0;
-    padding:5px 0;
+    margin:0 20px 0 0;
+    padding:0;
     z-index:9999;
     list-style:none;
     position:relative;
@@ -65,11 +65,11 @@ background-color: rgba(255, 255, 255, 0.95);
 }
 
 .loginbar {
-	margin:0;
-	padding:0;
-	z-index:9999;
-	list-style:none;
-	position:relative;
+    margin:0;
+    padding:0;
+    z-index:9999;
+    list-style:none;
+    position:relative;
     float: right;
 }
 
@@ -80,109 +80,109 @@ background-color: rgba(255, 255, 255, 0.95);
 }
 
 .loginbar li {
-	display:inline;
-	list-style:none;
+    display:inline;
+    list-style:none;
 }
 
 .loginbar li a,
 .loginbar li a:hover {
-	color:#7c8082;
-	font-size:11px;
+    color:#7c8082;
+    font-size:11px;
     font-family: 'Roboto', sans-serif;
 }
 
 .loginbar li.devider { 
-	top:-1px;
-	padding:0;
-	font-size:8px;
-	position:relative;
-	margin:0 6px 0 2px;
-	font-family:Tahoma;
-	border-right:solid 1px #bbb;
+    top:-1px;
+    padding:0;
+    font-size:8px;
+    position:relative;
+    margin:0 6px 0 2px;
+    font-family:Tahoma;
+    border-right:solid 1px #bbb;
 }
 
 .loginbar i {
-	color:#999;
-	font-size:18px;
-	margin-top:3px;
-	cursor:pointer;
+    color:#999;
+    font-size:18px;
+    margin-top:3px;
+    cursor:pointer;
 }
 
 /*Lenguages*/
 .loginbar li ul { 
-	top:18px;
-	margin:0;
-	left:-6px;
-	display:none; 
-	padding-top:4px;
-	position:absolute; 
-	border-radius:3px;
-	padding-bottom:4px;
-	background:#f0f0f0;
+    top:18px;
+    margin:0;
+    left:-6px;
+    display:none; 
+    padding-top:4px;
+    position:absolute; 
+    border-radius:3px;
+    padding-bottom:4px;
+    background:#f0f0f0;
 }
 
 .loginbar li:hover ul { 
-	display:block; 
+    display:block; 
 }
 
 .loginbar li ul li { 
-	padding-bottom:0;
-	display:list-item;
-	position:relative;
-	margin-bottom:1px;
+    padding-bottom:0;
+    display:list-item;
+    position:relative;
+    margin-bottom:1px;
 }
 
 .loginbar li ul li a { 
-	color:#555;
-	display:block;
-	min-width:85px; 
-	font-size:10px;
-	padding:2px 12px;
-	background:#f0f0f0;
-	text-decoration:none;
+    color:#555;
+    display:block;
+    min-width:85px; 
+    font-size:10px;
+    padding:2px 12px;
+    background:#f0f0f0;
+    text-decoration:none;
 }
 
 .loginbar li ul li a:hover, 
 .loginbar li ul li.active a {
-	opacity:1 !important;
-	color:#555 !important;
-	font-size:10px !important;
-	text-shadow:none !important;
-	background:#fafafa !important;
+    opacity:1 !important;
+    color:#555 !important;
+    font-size:10px !important;
+    text-shadow:none !important;
+    background:#fafafa !important;
 }
 
 .loginbar li ul li.active i {
-	top:2px;
-	right:-5px;
-	font-size:14px;
-	cursor:default;
-	position:absolute;
-	text-shadow:0 1px 0 #e9e9e9;
+    top:2px;
+    right:-5px;
+    font-size:14px;
+    cursor:default;
+    position:absolute;
+    text-shadow:0 1px 0 #e9e9e9;
 }
 
 .loginbar i.icon-globe {
-	color:#bbb;
-	font-size:13px;
-	margin:3px 3px 0 0;
+    color:#bbb;
+    font-size:13px;
+    margin:3px 3px 0 0;
 }
 
 .loginbar li i.icon-sort-up {
-	top:21px; 
-	left:-1px;
-	color:#eee;
-	display:none;
-	font-size:14px;
-	cursor:default;
-	position:absolute;
+    top:21px; 
+    left:-1px;
+    color:#eee;
+    display:none;
+    font-size:14px;
+    cursor:default;
+    position:absolute;
 }
 
 .loginbar li:hover i.icon-sort-up {
-	display:block;
+    display:block;
 }
 
 .loginbar li:hover i.icon-ok {
-	top:-2px;
-	color:#aaa;
+    top:-2px;
+    color:#aaa;
 }
 /* --------------------------- */
 /* --------------------------- */
@@ -205,11 +205,11 @@ background-color: rgba(255, 255, 255, 0.95);
 
 #topcontrol:hover {color: #a2c753;}
 #topcontrol, #topcontrol:hover {
--webkit-transition: all 0.3s ease-out;
--moz-transition: all 0.3s ease-out;
--ms-transition: all 0.3s ease-out;
--o-transition: all 0.3s ease-out;
-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 .blockquote {border-left: 5px solid #FF792D;}
 /* Toggle menu */
@@ -229,18 +229,18 @@ transition: all 0.3s ease-out;
 
 .services {padding:38px 0; margin:18px 0}
 .serviceBlock i {
-float: left;
-padding: 14px;
-color: #00B8FF;
-font-size: 6em;
-text-align: center;
--webkit-transition: all 0.3s ease-in-out;
--moz-transition: all 0.3s ease-in-out;
--o-transition: all 0.3s ease-in-out;
-transition: all 0.3s ease-in-out;
+    float: left;
+    padding: 14px;
+    color: #00B8FF;
+    font-size: 6em;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 blockquote {
-border-left: 5px solid #ff4800;
+    border-left: 5px solid #ff4800;
 }
 
 
@@ -249,13 +249,13 @@ border-left: 5px solid #ff4800;
 
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 480px) {
-.topHeaderSection {padding: 0;}
-.da-slide .da-img{display:none}
-.da-slide h2 {top: 18px;}
-.da-slide p {top: 255px;}
-.navbar-nav.navbar-right:last-child {margin-top: 0px;margin-bottom: 0px;}
-.navbar-toggle {margin-top: 21px;}
- }
+    .topHeaderSection {padding: 0;}
+    .da-slide .da-img{display:none}
+    .da-slide h2 {top: 18px;}
+    .da-slide p {top: 255px;}
+    .navbar-nav.navbar-right:last-child {margin-top: 0px;margin-bottom: 0px;}
+    .navbar-toggle {margin-top: 21px;}
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {  }
