@@ -1,16 +1,16 @@
-<div class="navbar-collapse collapse">
-  <%= form_tag search_passports_path,  {class: "navbar-form navbar-right", method: "GET", remote: true} do %>
-      <div class="input-group">
-        <%= select_tag :search_type, options_for_select([ "Email", "Mobile", "Passport" ]),  :class => "form-control" %>
-      </div>
-
+<%= form_tag search_passports_path,  {class: "form-inline", method: "GET", remote: true, role: 'form'} do %>
+    <div class="form-group">
+      <%= select_tag :search_type, options_for_select([ "Email", "Mobile", "Passport" ]),  :class => "form-control" %>
+    </div>
+    <div class="form-group">
       <div class="input-group">
         <input type="text" name="term" placeholder="Search..." class="form-control">
         <div class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
         </div>
       </div>
-    <%end%>
-  </div>
+    </div>
+  <%end%>
+  <div class="clearfix" style="height:10px;"></div>
   <div id="passport">
     <%= render partial: 'passport' %>
   </div> 
