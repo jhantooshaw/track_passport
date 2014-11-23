@@ -3,5 +3,9 @@
 }
 
 .navbar-brand {
-// padding: 16px 15px;
+    // padding: 16px 15px;
+}
+
+.reset-img-max-width img { 
+    max-width: none; 
 }

@@ -26,6 +26,10 @@ Rails.application.routes.draw do
    
   match 'track-visa' => 'visas#track', :via => [:get, :post], :as => :track_visa
   
+  match 'tourist-visa'=> 'visas#tourist', :via => :get, :as => :tourist_visa
+  match 'transit-visa'=> 'visas#transit', :via => :get, :as => :transit_visa
+  match 'contact'  => 'visas#contact', :via => :get, :as => :contact
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
