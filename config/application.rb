@@ -21,14 +21,16 @@ module TrackPassport
     # config.i18n.default_locale = :de
     
     WillPaginate.per_page = 10
-     
+    
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
       port:                 587,
-      domain:               'visa.neovisioninfo.com',
-      user_name:            'jhantoo.shaw@stellingtech.com',
-      password:             'mantoo25',
+      domain:               'visa.neovisioninfo.com',      
+      user_name:            'info.uat.thailand@gmail.com',
+      password:             'wb02y5060',      
+      #      user_name:            ENV["CGMAILUSER"],
+      #      password:             ENV['CGMAILPASSWORD'],
       authentication:       'plain',
       enable_starttls_auto: true  }
     

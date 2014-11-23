@@ -21,3 +21,4 @@ public/system
 vendor/bundle
 /.ruby-gemset*
 /.ruby-version*
+/config/app_environment_variables.rb
