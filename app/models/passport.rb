@@ -1,6 +1,11 @@
 class Passport < ActiveRecord::Base
-  has_many    :visas,     dependent: :destroy
+  SEARCH_BY = [
+    ["Email Address", "email"],
+    ["Mobile Number", "mobile"],
+    ["Passport Number", "passport"]
+  ]
   
+  has_many    :visas,     dependent: :destroy  
   default_scope {order("created_at desc")}
  
   

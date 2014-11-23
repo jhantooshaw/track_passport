@@ -49,11 +49,11 @@ class PassportsController < ApplicationController
   
   def search
     case params[:search_type]
-    when 'Email'
+    when 'email'
       @passports = Passport.where("email like ?", "#{params[:term]}%").paginate(:page => params[:page])
-    when 'Mobile'
+    when 'mobile'
       @passports = Passport.where("mobile like ?", "#{params[:term]}%").paginate(:page => params[:page])
-    when 'Passport'
+    when 'passport'
       @passports = Passport.where("number like ?", "#{params[:term]}%").paginate(:page => params[:page])
     end
    

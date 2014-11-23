@@ -1,7 +1,7 @@
 <%= form_tag search_passports_path,  {class: "form-inline", method: "GET", remote: true, role: 'form'} do %>
     <div style="float:right;">
       <div class="form-group">
-        <%= select_tag :search_type, options_for_select([ "Email", "Mobile", "Passport" ]),  :class => "form-control" %>
+        <%= select_tag :search_type, options_for_select(Passport::SEARCH_BY),  :class => "form-control" %>
       </div>
       <div class="form-group">
         <div class="input-group">
