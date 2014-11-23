@@ -3,4 +3,4 @@
 <p>Your visa Application is <%= @visa.status.humanize %>. Please track your application using below unique number:</p>
 <p><%= @visa.unique_number %></p>
 
-<p><%= link_to 'Track Passport', track_visa_url(id: @passport.id, token: @visa.unique_number)%></p>
+<p><%= link_to 'Click Here', track_visa_url(id: @passport.id, token: @visa.unique_number), class: "btn btn-info"%></p>

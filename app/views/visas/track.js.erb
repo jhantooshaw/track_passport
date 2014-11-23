@@ -1,5 +1,7 @@
 <% if @error.present? %>
   $('#track-result').html('<%= @error %>');
-<%else%>
+  $('#track-result').addClass("alert alert-danger");
+<%else%> 
   $('#track-result').html('Your Application is <%= @visa.status.humanize %>');
+  $('#track-result').addClass("alert alert-info");
 <%end%>
