@@ -3,7 +3,7 @@ class Visa < ActiveRecord::Base
   SIZE = 8  
   STATUS = [
     ["Under Process", "under_process"],
-    ["Gratnted", "granted"],
+    ["Approved", "approved"],
     ["Rejected", "rejected"],
     ["Delivered", "delivered"]
   ]

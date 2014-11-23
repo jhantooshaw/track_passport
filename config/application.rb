@@ -26,9 +26,9 @@ module TrackPassport
     config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
       port:                 587,
-      domain:               'trackpassport.com',
-      user_name:            ENV['GMAILUSER'],
-      password:             ENV['GMAILPASSWORD'],
+      domain:               'visa.neovisioninfo.com',
+      user_name:            ENV['CGMAILUSER'],
+      password:             ENV['CGMAILPASSWORD'],
       authentication:       'plain',
       enable_starttls_auto: true  }
     

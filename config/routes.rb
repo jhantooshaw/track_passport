@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:sessions => "sessions"}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -20,10 +20,11 @@ Rails.application.routes.draw do
   #end
   
   # You can have the root of your site routed with "root"
-  root 'tracks#home'
+  root 'visas#home'
   
   match 'check-valid-email' => 'application#valid_email',   :via => :get,  :as => :valid_email
    
+  match 'track-visa' => 'visas#track', :via => [:get, :post], :as => :track_visa
   
 
   # Example of regular route:

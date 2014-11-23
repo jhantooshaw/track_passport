@@ -1,0 +1,5 @@
+<% if @error.present? %>
+  $('#track-result').html('<%= @error %>');
+<%else%>
+  $('#track-result').html('Your Application is <%= @visa.status.humanize %>');
+<%end%>

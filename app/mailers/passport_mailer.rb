@@ -5,6 +5,6 @@ class PassportMailer < ActionMailer::Base
     @passport = passport
     @visa = visa
     #@url  = 'http://example.com/login'
-    mail(to: @passport.email, subject: 'Passport is created')
+    mail(to: @passport.email, subject: 'Application is received')
   end
 end

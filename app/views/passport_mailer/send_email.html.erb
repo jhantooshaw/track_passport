@@ -1,6 +1,6 @@
 <p>Welcome <%= "#{@passport.first_name} #{@passport.last_name}" %>!</p>
 
-<p>Your passport is ready to delivered. Please track the status of your passport using below unique number:</p>
+<p>Your visa Application is <%= @visa.status.humanize %>. Please track your application using below unique number:</p>
 <p><%= @visa.unique_number %></p>
 
-<p><%= link_to 'Track Passport', root_url%></p>
+<p><%= link_to 'Track Passport', track_visa_url(id: @passport.id, token: @visa.unique_number)%></p>
