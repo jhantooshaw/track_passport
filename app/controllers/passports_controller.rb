@@ -17,10 +17,10 @@ class PassportsController < ApplicationController
       @visa = @passport.visas.build(visa_params)
       @passport.save! 
       PassportMailer.send_email(@passport, @visa).deliver
-      flash[:notice] = "Passport is created successfully. An email and text message is sent to respective email and mobile number."
+      flash[:info] = "Passport is created successfully. An email and text message is sent to respective email and mobile number."
       redirect_to passports_path
     rescue Exception => e
-      flash.now[:info] = e.message
+      flash.now[:warning] = e.message
       render 'new'
     end
   end
@@ -28,10 +28,10 @@ class PassportsController < ApplicationController
   def update    
     begin 
       @passport.update_attributes!(passport_params)
-      flash[:notice] = "Passport is updated successfully."
+      flash[:info] = "Passport is updated successfully."
       redirect_to passports_path
     rescue Exception => e
-      flash.now[:info] = e.message
+      flash.now[:warning] = e.message
       render 'edit'
     end
   end
@@ -39,10 +39,10 @@ class PassportsController < ApplicationController
   def destroy
     begin     
       @passport.destroy!
-      flash[:notice] = "Passport is deleted successfully."
+      flash[:info] = "Passport is deleted successfully."
       redirect_to passports_path
     rescue Exception => e
-      flash[:info] = e.message
+      flash[:warning] = e.message
       redirect_to passports_path
     end
   end
@@ -67,7 +67,7 @@ class PassportsController < ApplicationController
     begin   
       @visa = @passport.visas.find(params[:visa_id])
       @visa.update_attributes!(status: params[:status])
-      flash[:notice] = "Visa status is changed successfully."  
+      flash[:info] = "Visa status is changed successfully."  
     rescue Exception => e
       puts "Exception: #{e.message}"
       flash.now[:warning] = e.message
@@ -76,17 +76,19 @@ class PassportsController < ApplicationController
   end
   
   def add_visa
-    if request.post?
-      begin
+    begin
+      if request.post?    
         @visa = @passport.visas.create!(visa_type: params[:visa_type])
         PassportMailer.send_email(@passport, @visa).deliver
         @visas = @passport.visas
         flash[:info] = "Visa is added successfully."  
-      rescue Exception => e
-        puts "Exception: #{e.message}"
-        flash.now[:warning] = e.message
-        @error = e.message
+      else
+        raise "Visa application is already received which is not delivered yet. Please delivered it first." if @passport.already_visa.present?
       end
+    rescue Exception => e
+      puts "Exception: #{e.message}"
+      flash.now[:warning] = e.message
+      @error = e.message
     end
   end
   

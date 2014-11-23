@@ -27,8 +27,8 @@ module TrackPassport
       address:              'smtp.gmail.com',
       port:                 587,
       domain:               'visa.neovisioninfo.com',
-      user_name:            ENV['CGMAILUSER'],
-      password:             ENV['CGMAILPASSWORD'],
+      user_name:            'jhantoo.shaw@stellingtech.com',
+      password:             'mantoo25',
       authentication:       'plain',
       enable_starttls_auto: true  }
     

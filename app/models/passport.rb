@@ -10,5 +10,9 @@ class Passport < ActiveRecord::Base
     
   end
   
+  def already_visa
+    visas.where("status != ?", 'delivered').first
+  end
+  
   
 end
