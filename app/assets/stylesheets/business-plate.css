@@ -75,9 +75,14 @@ img{max-width:100%}
 
 .second_logo{
     float:left; 
-    width:300px;
+    width:100px;
     text-align:center;
     padding-top: 5px;
+    margin-right:25%;
+}
+
+.navbar_header_width{
+    width: 50%;
 }
 
 @media (max-width: 480px) {
@@ -250,6 +255,7 @@ blockquote {
     border-left: 5px solid #ff4800;
 }
 
+
 /* Media Query */
 
 /* Small devices (tablets, 768px and up) */
@@ -261,8 +267,13 @@ blockquote {
     .navbar-nav.navbar-right:last-child {margin-top: 0px;margin-bottom: 0px;}
     .navbar-toggle {margin-top: 21px;}
     .second_logo{
-        float:left;     
+        float:none;  
+        margin-right: 0;
     }
+    .navbar_header_width{
+        width:100% !important;
+    }
+
 }
 
 /* Medium devices (desktops, 992px and up) */
