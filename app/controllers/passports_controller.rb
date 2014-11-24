@@ -83,7 +83,7 @@ class PassportsController < ApplicationController
         @visas = @passport.visas
         flash[:info] = "Visa is added successfully."  
       else
-        raise "Visa application is already received which is not delivered yet. Please delivered it first." if @passport.already_visa.present?
+        raise "Visa application is already received which has been not delivered yet. Please delivered first." if @passport.already_visa.present?
       end
     rescue Exception => e
       puts "Exception: #{e.message}"

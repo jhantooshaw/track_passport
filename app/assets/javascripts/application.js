@@ -34,3 +34,22 @@ $(document).on('ready page:load', function() {
                 (e.which < 48 || e.which > 57) && e.which !== 46);
     });
 });
+
+function initialize() {
+    var mapCanvas = document.getElementById('map-canvas');
+    var myLatlng = new google.maps.LatLng(22.541616, 88.368853);
+
+    var mapOptions = {
+        center: myLatlng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: "Thailand Visa Application Centre"
+    });
+    marker.setMap(map);
+    google.maps.event.addDomListener(window, 'load', initialize);
+}
