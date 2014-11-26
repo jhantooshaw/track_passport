@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   match 'tourist-visa'=> 'visas#tourist', :via => :get, :as => :tourist_visa
   match 'transit-visa'=> 'visas#transit', :via => :get, :as => :transit_visa
   match 'contact'     => 'visas#contact', :via => :get, :as => :contact
-  match 'online-form' => 'visas#online_form', :via => :get, :as => :download_form
+  match 'online-form' => 'visas#online_form', :via => :get, :as => :online_form
+  match 'download-form' => 'visas#download_form', :via => :get, :as => :download_form
   
 
   # Example of regular route:
