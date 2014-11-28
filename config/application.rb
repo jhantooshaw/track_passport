@@ -26,7 +26,7 @@ module TrackPassport
     config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
       port:                 587,
-      domain:               'visa.neovisioninfo.com',      
+      domain:               'uat-thailand.com',      
       user_name:            'info.uat.thailand@gmail.com',
       password:             'wb02y5060',      
       #      user_name:            ENV["CGMAILUSER"],

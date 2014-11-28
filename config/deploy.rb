@@ -1,16 +1,16 @@
 require 'bundler/capistrano'
 
-set :domain, "54.148.21.147"
-set :user, "neovision"
-set :password, "ne0v1$10n"
+set :domain, "54.69.150.252"
+set :user, "neoinfo"
+set :password, "ne01nf0"
 set :application, "track_passport"
 set :repository,  "git@github.com:jhantooshaw/track_passport.git"
 set :rails_env, "production"
 set :scm, :git
 set :scm_username, "jhantooshaw"
-set :deploy_to, "/home/neovision/rails_app/#{application}" 
+set :deploy_to, "/home/neoinfo/rails_app/#{application}" 
 set :use_sudo, false
-set :chmod755, "app config db db/* log/production.log vendor script script/* public"
+set :chmod755, "app config db db/* log/*.log vendor script script/* public"
 set :keep_releases, 3 
 
 default_run_options[:pty] = true
@@ -39,6 +39,5 @@ namespace :deploy do
   desc "Restart passenger app"
   task :restart do    
     run "touch #{File.join(current_path, 'tmp', 'restart.txt') }"
-  end  
-  
+  end    
 end
