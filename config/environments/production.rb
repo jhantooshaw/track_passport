@@ -83,6 +83,6 @@ Rails.application.configure do
   
   #config.assets.paths += %W("#{Rails.root}/vendor/assets/fonts")
   
-  config.action_mailer.default_url_options = { host: 'visa.neovisioninfo.com' }
+  config.action_mailer.default_url_options = { host: 'uat-thailand.com' }
 
 end
